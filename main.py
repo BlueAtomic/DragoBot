@@ -7,12 +7,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 intents = discord.Intents.default()
-bot =commands.Bot()
+bot = commands.Bot(intents=intents)
+bot.load_extensions("cogs")  # Loads all cogs in the cogs folder
 
 @bot.listen()
 async def on_connect():
     print('connected to Discord!')
-
-bot.load_extensions("cogs")  # Loads all cogs in the cogs folder
 
 bot.run(os.getenv('token'))
