@@ -13,4 +13,6 @@ bot =commands.Bot()
 async def on_connect():
     print('connected to Discord!')
 
+bot.load_extensions("cogs")  # Loads all cogs in the cogs folder
+
 bot.run(os.getenv('tolken'))
