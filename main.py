@@ -15,4 +15,4 @@ async def on_connect():
 
 bot.load_extensions("cogs")  # Loads all cogs in the cogs folder
 
-bot.run(os.getenv('tolken'))
+bot.run(os.getenv('token'))
