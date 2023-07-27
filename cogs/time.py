@@ -16,15 +16,15 @@ class time(commands.Cog):
         #check Time!
         if year <=1:
             message="your year is invalid"
-        if 0 < month >= 12:
+        elif 0 < month >= 12:
             message = "your month is invalid"
-        if 0< day >= 31:
+        elif 0< day >= 31:
             message = "your day is invalid"
-        if 0 <= hour >= 24:
+        elif 0 <= hour >= 24:
             message="your hour is invalid"
-        if 0 <= minute >= 59:
+        elif 0 <= minute >= 59:
             message="you minute is invalid"
-        if 0 <= second >=59:
+        elif 0 <= second >=59:
             message="your seconds are invalid"
         else:
             t = datetime.datetime(year, month, day, hour, minute, second)
