@@ -6,7 +6,7 @@ import re #regex
 
 bot = discord.Bot()
 embed = discord.Embed
-print(type(time))
+
 
 
 class timec(commands.Cog):
@@ -41,14 +41,9 @@ class timec(commands.Cog):
                 factor = 1
 
             total += int(match.group('value')) * factor
-        print(type(time))
         epoch = total + time.time()
         epoch = int(round(epoch))
         message = f'<t:{epoch}:{style}> or `<t:{epoch}:{style}>`'
-
-        print(total)  # Optional: Print the total duration in seconds
-        print(epoch)  # Optional: Print the resulting epoch time
-
         embed = discord.Embed(
             title="timestap",
             description=message,
