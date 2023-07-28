@@ -6,8 +6,10 @@ import re #regex
 
 bot = discord.Bot()
 embed = discord.Embed
+print(type(time))
 
-class time(commands.Cog):
+
+class timec(commands.Cog):
     def __int__(self, bot):
         self.bot = bot
 
@@ -39,15 +41,21 @@ class time(commands.Cog):
                 factor = 1
 
             total += int(match.group('value')) * factor
-
-        epoch = total + int(time.time())
+        print(type(time))
+        epoch = total + time.time()
+        epoch = int(round(epoch))
         message = f'<t:{epoch}:{style}> or `<t:{epoch}:{style}>`'
 
         print(total)  # Optional: Print the total duration in seconds
         print(epoch)  # Optional: Print the resulting epoch time
 
-        await ctx.send(message)
+        embed = discord.Embed(
+            title="timestap",
+            description=message,
+            timestamp=discord.utils.utcnow(),
+            color=discord.Color.dark_gray())
+        await ctx.respond(embed=embed)
 
 
 def setup(bot):
-    bot.add_cog(time(bot))
+    bot.add_cog(timec(bot))
